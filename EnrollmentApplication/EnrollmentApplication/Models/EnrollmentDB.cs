@@ -16,6 +16,14 @@ public class EnrollmentDB : DbContext
     public EnrollmentDB() : base("name=EnrollmentDB")
     {
     }
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        Database.SetInitializer<EnrollmentDB>(null);
+        base.OnModelCreating(modelBuilder);
+    }
+
+
+
 
     public System.Data.Entity.DbSet<EnrollmentApplication.Models.Enrollment> Enrollments { get; set; }
 
