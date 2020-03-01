@@ -18,7 +18,7 @@ public class EnrollmentDB : DbContext
     }
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
-        Database.SetInitializer<EnrollmentDB>(null);
+       // Database.SetInitializer<EnrollmentDB>(null); 
         base.OnModelCreating(modelBuilder);
     }
 
