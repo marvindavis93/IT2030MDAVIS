@@ -49,7 +49,7 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentID,StudentId,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYearCourseId,Grade")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "EnrollmentID,StudentId,FirstName,LastName,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYearCourseId,Grade,Notes")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace EnrollmentApplication.Controllers
             }
 
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", "StudentFirstName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -76,7 +76,7 @@ namespace EnrollmentApplication.Controllers
                 return HttpNotFound();
             }
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname","StudentFirstName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -85,7 +85,7 @@ namespace EnrollmentApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentID,StudentId,CourseId,Grade, IsActive, AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "EnrollmentID,StudentId,FirstName,LastName,CourseId,Grade, IsActive, AssignedCampus,EnrollmentSemester,EnrollmentYear,Notes")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace EnrollmentApplication.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", "StudentFirstName",enrollment.StudentId);
             return View(enrollment);
         }
 

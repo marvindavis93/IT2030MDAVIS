@@ -9,7 +9,7 @@ namespace EnrollmentApplication.Models
     public class Enrollment
     {
 
-        [Display(Name = "Enrollment Id")]
+        [Display(Name = "Enrollment Id")] 
 
         public virtual int EnrollmentID {get; set;}
 
@@ -40,8 +40,17 @@ namespace EnrollmentApplication.Models
 
 
         [Required]
-        [Range(2018, int.MaxValue, ErrorMessage ="Enter value less than 2018" )]
+        [Range(2018, int.MaxValue, ErrorMessage ="Enter value not less than 2018" )]
 
         public virtual int EnrollmentYear { get; set; }
+
+        //InvalidChars
+        [Display(Name = "Notes")]
+       
+        [InvalidChars(" !, @, $, *,", ErrorMessage = "Notes contains unacceptable characters!")]
+        public virtual string Notes { get; set; }
+
+
+
     }
 }

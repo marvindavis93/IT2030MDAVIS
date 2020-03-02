@@ -27,5 +27,8 @@ namespace EnrollmentApplication.Models
          [Display(Name = "Number of Credits")]
         [RegularExpression("^[1-4]{1}$", ErrorMessage = "Enter value either 1,2 or 3,4")]
         public virtual int CourseCredits { get; set; }
+
+
+        public virtual string InstructorName { get; set;  }
     }
 }
