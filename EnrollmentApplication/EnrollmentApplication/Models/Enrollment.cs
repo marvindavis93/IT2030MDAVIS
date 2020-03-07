@@ -40,14 +40,14 @@ namespace EnrollmentApplication.Models
 
 
         [Required]
-        [Range(2018, int.MaxValue, ErrorMessage ="Enter value not less than 2018" )]
+        [Range(2018, int.MaxValue, ErrorMessage ="Enter value greater than 2018" )]
 
         public virtual int EnrollmentYear { get; set; }
 
         //InvalidChars
         [Display(Name = "Notes")]
-       
-        [InvalidChars(" !, @, $, *,", ErrorMessage = "Notes contains unacceptable characters!")]
+        [Required]
+        [InvalidChars("@", ErrorMessage = "Notes contains unacceptable characters!")]
         public virtual string Notes { get; set; }
 
 

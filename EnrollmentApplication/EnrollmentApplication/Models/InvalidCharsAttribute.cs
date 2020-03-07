@@ -19,10 +19,10 @@ namespace EnrollmentApplication.Models
         {
             if (value != null)
             {
-                if (((string)value).Contains(invalidChars))
+                if ((string)value ==invalidChars)
                 {
-                    var errormessage = FormatErrorMessage(validationContext.DisplayName);
-                    return new ValidationResult(errormessage);
+                    
+                    return new ValidationResult("Notes contain unaccepatble character");
                 }
             }
             return ValidationResult.Success;

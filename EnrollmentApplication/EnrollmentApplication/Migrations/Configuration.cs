@@ -10,7 +10,7 @@ namespace EnrollmentApplication.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "EnrollmentDB";
+            ContextKey = "EnrollmentApplication.Models.EnrollmentDB";
         }
 
         protected override void Seed(EnrollmentDB context)
