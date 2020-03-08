@@ -7,13 +7,13 @@ namespace EnrollmentApplication.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Update1 : IMigrationMetadata
+    public sealed partial class Update2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Update1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Update2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003080322184_Update1"; }
+            get { return "202003081828254_Update2"; }
         }
         
         string IMigrationMetadata.Source
