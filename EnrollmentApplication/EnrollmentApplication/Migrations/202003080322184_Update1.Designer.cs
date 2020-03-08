@@ -13,7 +13,7 @@ namespace EnrollmentApplication.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202003020120140_Update1"; }
+            get { return "202003080322184_Update1"; }
         }
         
         string IMigrationMetadata.Source

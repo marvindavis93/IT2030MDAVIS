@@ -47,7 +47,7 @@ namespace EnrollmentApplication.Models
         //InvalidChars
         [Display(Name = "Notes")]
         [Required]
-        [InvalidChars("@", ErrorMessage = "Notes contains unacceptable characters!")]
+        [InvalidChars("@", ErrorMessage ="Notes contains invalid characters!")]
         public virtual string Notes { get; set; }
 
 

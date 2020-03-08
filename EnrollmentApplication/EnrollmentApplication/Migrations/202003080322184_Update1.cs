@@ -3,7 +3,7 @@ namespace EnrollmentApplication.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Update1 : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace EnrollmentApplication.Migrations
                         Title = c.String(nullable: false, maxLength: 150),
                         CourseDescription = c.String(),
                         CourseCredits = c.Int(nullable: false),
+                        InstructorName = c.String(),
                     })
                 .PrimaryKey(t => t.CourseId);
             
@@ -30,6 +31,7 @@ namespace EnrollmentApplication.Migrations
                         AssignedCampus = c.String(nullable: false),
                         EnrollmentSemester = c.String(nullable: false),
                         EnrollmentYear = c.Int(nullable: false),
+                        Notes = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.EnrollmentID)
                 .ForeignKey("dbo.Courses", t => t.CourseId, cascadeDelete: true)
@@ -44,6 +46,11 @@ namespace EnrollmentApplication.Migrations
                         StudentID = c.Int(nullable: false, identity: true),
                         StudentLastname = c.String(nullable: false, maxLength: 50),
                         StudentFirstName = c.String(nullable: false, maxLength: 50),
+                        Address1 = c.String(),
+                        Address2 = c.String(),
+                        City = c.String(),
+                        Zipcode = c.String(),
+                        State = c.String(),
                     })
                 .PrimaryKey(t => t.StudentID);
             

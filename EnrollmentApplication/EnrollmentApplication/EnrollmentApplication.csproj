@@ -128,17 +128,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Migrations\202002291933152_InitialCreate.cs" />
-    <Compile Include="Migrations\202002291933152_InitialCreate.Designer.cs">
-      <DependentUpon>202002291933152_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003020120140_Update1.cs" />
-    <Compile Include="Migrations\202003020120140_Update1.Designer.cs">
-      <DependentUpon>202003020120140_Update1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003020549550_Update11.cs" />
-    <Compile Include="Migrations\202003020549550_Update11.Designer.cs">
-      <DependentUpon>202003020549550_Update11.cs</DependentUpon>
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Data\EnrollmentApplicationDB.cs" />
+    <Compile Include="Migrations\202003080322184_Update1.cs" />
+    <Compile Include="Migrations\202003080322184_Update1.Designer.cs">
+      <DependentUpon>202003080322184_Update1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EnrollmentDB.cs" />
@@ -192,6 +186,11 @@
     <Content Include="Views\Enrollment\Details.cshtml" />
     <Content Include="Views\Enrollment\Edit.cshtml" />
     <Content Include="Views\Enrollment\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -210,14 +209,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002291933152_InitialCreate.resx">
-      <DependentUpon>202002291933152_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003020120140_Update1.resx">
-      <DependentUpon>202003020120140_Update1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003020549550_Update11.resx">
-      <DependentUpon>202003020549550_Update11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003080322184_Update1.resx">
+      <DependentUpon>202003080322184_Update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
