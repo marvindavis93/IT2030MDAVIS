@@ -5,15 +5,15 @@ namespace EnrollmentApplication.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EnrollmentDB>
+    internal sealed class Configuration : DbMigrationsConfiguration<EnrollmentApplication.Data.EnrollmentApplicationDB>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "EnrollmentApplication.Models.EnrollmentDB";
+            ContextKey = "EnrollmentApplication.Data.EnrollmentApplicationDB";
         }
 
-        protected override void Seed(EnrollmentDB context)
+        protected override void Seed(EnrollmentApplication.Data.EnrollmentApplicationDB context)
         {
             //  This method will be called after migrating to the latest version.
 

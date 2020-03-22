@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using EnrollmentApplication.Data;
 using EnrollmentApplication.Models;
 
 namespace EnrollmentApplication.Controllers
@@ -13,6 +14,29 @@ namespace EnrollmentApplication.Controllers
     public class EnrollmentController : Controller
     {
         private EnrollmentDB db = new EnrollmentDB();
+
+
+        public ActionResult StudentSearch(string q)
+        {
+            var student = GetStudent(q);
+            return PartialView("_StudentSearch", student);
+        }
+        private List<Student> GetStudent(string searchString)
+
+        {
+            return db.Students
+                .Where(a => a.StudentFirstName.Contains(searchString))
+                .ToList();
+        }
+
+
+
+
+
+
+
+
+
 
         // GET: Enrollment
         public ActionResult Index()

@@ -44,11 +44,11 @@ namespace EnrollmentApplication.Models
             {
                 yield return (new ValidationResult("Address2 cannot be same as Address 1"));
             }
-            if (State !=  null && State.Split (' ').Length <2 )
+            if (State !=  null && State.Split (' ').Length >2 )
             {
                 yield return (new ValidationResult("Enter 2 digit State code "));
             }
-            if (Zipcode !=  null && Zipcode.Split(' ').Length >5)
+            if (Zipcode !=  null && Zipcode.Split(' ').Length <5)
             {
             }
             else
@@ -57,6 +57,7 @@ namespace EnrollmentApplication.Models
             }
 
             //throw new NotImplementedException();
+
         }
     }
 }

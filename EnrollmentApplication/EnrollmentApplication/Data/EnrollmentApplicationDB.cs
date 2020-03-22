@@ -22,5 +22,6 @@ namespace EnrollmentApplication.Data
         public System.Data.Entity.DbSet<EnrollmentApplication.Models.Student> Students { get; set; }
 
         public System.Data.Entity.DbSet<EnrollmentApplication.Models.Course> Courses { get; set; }
+        public object Enrollment { get; internal set; }
     }
 }
