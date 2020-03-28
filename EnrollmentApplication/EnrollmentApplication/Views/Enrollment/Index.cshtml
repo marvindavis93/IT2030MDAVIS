@@ -7,35 +7,78 @@
 <h2>Index</h2>
 
 
-<div class=" panel panel-default">
-    <div class=" =panel-heading">Student Search </div>
-    <div class=" panel-body"></div>
-    @using (Ajax.BeginForm("StudentSearch ", "Student", new AjaxOptions
-
-    {
-        InsertionMode = InsertionMode.Replace,
-        HttpMethod = "GET",
-        OnFailure = "searchFailed",
-        LoadingElementId = "ajax-loader",
-        UpdateTargetId = "searchresults"
-    }))
-
-    {
-        <input type="text" name="q" />
-        <input type="submit" value="search" />
-        <img id="ajax-loader"
-             src="@Url.Content("~/Content/ajax-loader.gif" ) "
-             style="display:none" />
 
 
 
-    }
-
-    <div id="searchresults"></div>
 
 
 
-</div>
+
+
+
+@using (Ajax.BeginForm("StudentSearch", "Enrollment", new AjaxOptions
+
+{
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET",
+    OnFailure = "searchFailed",
+    LoadingElementId = "ajax-loader",
+    UpdateTargetId = "searchresults"
+}))
+
+{
+    <input type="text" name="q" />
+    <input type="submit" value="Student search" />
+    <img id="ajax-loader"
+         src="@Url.Content("~/Content/ajax-loader.gif" ) "
+         style="display:none" />
+
+   
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+@using (Ajax.BeginForm("CourseSearch", "Enrollment", new AjaxOptions
+
+{
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET",
+    OnFailure = "searchFailed",
+    LoadingElementId = "ajax-loader",
+    UpdateTargetId = "searchresults"
+}))
+
+{
+    <input type="text" name="q" />
+    <input type="submit" value="Course search" />
+    <img id="ajax-loader"
+         src="@Url.Content("~/Content/ajax-loader.gif" ) "
+         style="display:none" />
+
+
+
+}
+
+
+
+
+
+
+<div id="searchresults"></div>
+
+
+
 
 
 
@@ -54,7 +97,7 @@
             @Html.DisplayNameFor(model => model.Student.StudentLastname)
         </th>
 
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Grade)
         </th>
@@ -87,5 +130,8 @@
 @section Scripts
 {
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
     <script src="~/Scripts/Apps/StudentScripts.js"></script>
+
+    <script src="~/Scripts/Apps/CourseScripts.js"></script>
 }

@@ -24,16 +24,25 @@ namespace EnrollmentApplication.Controllers
         private List<Student> GetStudent(string searchString)
 
         {
-            return db.Students
-                .Where(a => a.StudentFirstName.Contains(searchString))
+            return db.Student
+                .Where(a => a.StudentLastname.Contains(searchString))
                 .ToList();
         }
 
 
+        public ActionResult CourseSearch(string q)
+        {
+            var course = GetCourse(q);
+            return PartialView("_CourseSearch",course);
+        }
 
+        private List<Course> GetCourse (string searchString) 
+                {
+            return db.Courses
+     .Where(a => a.Title.Contains(searchString))
+     .ToList();
 
-
-
+        }
 
 
 
@@ -64,7 +73,7 @@ namespace EnrollmentApplication.Controllers
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title");
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname");
+            ViewBag.StudentId = new SelectList(db.Student, "StudentID", "StudentLastname");
             return View();
         }
 
@@ -83,7 +92,7 @@ namespace EnrollmentApplication.Controllers
             }
 
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", "StudentFirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Student, "StudentID", "StudentLastname", "StudentFirstName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -100,7 +109,7 @@ namespace EnrollmentApplication.Controllers
                 return HttpNotFound();
             }
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname","StudentFirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Student, "StudentID", "StudentLastname","StudentFirstName", enrollment.StudentId);
             return View(enrollment);
         }
 
@@ -118,7 +127,7 @@ namespace EnrollmentApplication.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Title", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "StudentLastname", "StudentFirstName",enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Student, "StudentID", "StudentLastname", "StudentFirstName",enrollment.StudentId);
             return View(enrollment);
         }
 

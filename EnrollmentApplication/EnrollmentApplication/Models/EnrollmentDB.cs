@@ -29,5 +29,5 @@ public class EnrollmentDB : DbContext
 
     public System.Data.Entity.DbSet<EnrollmentApplication.Models.Course> Courses { get; set; }
 
-    public System.Data.Entity.DbSet<EnrollmentApplication.Models.Student> Students { get; set; }
+    public System.Data.Entity.DbSet<EnrollmentApplication.Models.Student> Student { get; set; }
 }
